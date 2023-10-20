@@ -10,6 +10,7 @@ import backenddmm20232.views.ManterSistema;
 import backenddmm20232.views.ManterTransactionDonation;
 import backenddmm20232.views.ManterUsuario;
 import backenddmm20232.views.ManterEstoqueSangue;
+import backenddmm20232.views.ManterPessoaJuridica;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
  
@@ -32,7 +33,7 @@ public class BackEndDmm20232 {
     }
 
     public static void menu() throws SQLException, ClassNotFoundException {
-        String msg = " 0 - Sair \n 1 - Usuario \n 2 - Sistema \n 3 - Pessoa Física\n 4 - Agendamento de Doações \n 5 - Transações \n 6 - Estoque Sangue \n 7 - ControleAcesso";
+        String msg = " 0 - Sair \n 1 - Usuario \n 2 - Sistema \n 3 - Pessoa Física\n 4 - Agendamento de Doações \n 5 - Transações \n 6 - Estoque Sangue \n 7 - Pessoa Jurídica \n 8 - ControleAcesso";
 
         int num = Integer.parseInt(JOptionPane.showInputDialog(msg));
         
@@ -60,6 +61,9 @@ public class BackEndDmm20232 {
                 ManterEstoqueSangue.menu();
                 break;
             case 7:
+                ManterPessoaJuridica.menu();
+                break;
+            case 8:
                 break;
             default:
                 System.out.println("Opção inválido");
