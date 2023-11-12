@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 02/10/2023 às 01:50
+-- Tempo de geração: 13/11/2023 às 00:00
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.0.28
 
@@ -20,6 +20,74 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `dm20232`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `campanha_doacao`
+--
+
+CREATE TABLE `campanha_doacao` (
+  `id` bigint(20) NOT NULL,
+  `id_hospital` bigint(20) NOT NULL,
+  `nome_campanha` varchar(255) DEFAULT NULL,
+  `data_inicio` varchar(255) DEFAULT NULL,
+  `data_fim` varchar(255) DEFAULT NULL,
+  `descricao` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `campanha_doacao`
+--
+
+INSERT INTO `campanha_doacao` (`id`, `id_hospital`, `nome_campanha`, `data_inicio`, `data_fim`, `descricao`) VALUES
+(1, 5, 'Hospital M Boi Mirim', '25 de julho 2023', '25 de agosto de 2023', 'campanha para O+'),
+(3, 5, 'Doe Mais', '12/12/12', '12/01/2024', 'Doe mais'),
+(4, 2, 'Doe Mais Vida', '123321', '32131', 'doe mais');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `estoque_sangue`
+--
+
+CREATE TABLE `estoque_sangue` (
+  `id` bigint(20) NOT NULL,
+  `id_banco` bigint(20) DEFAULT NULL,
+  `tipo_sanguineo` varchar(255) DEFAULT NULL,
+  `quantidade_disponivel` int(4) DEFAULT NULL,
+  `data_validade` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `estoque_sangue`
+--
+
+INSERT INTO `estoque_sangue` (`id`, `id_banco`, `tipo_sanguineo`, `quantidade_disponivel`, `data_validade`) VALUES
+(1, 1, 'AB-', 434, '12331');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `feedback`
+--
+
+CREATE TABLE `feedback` (
+  `id` bigint(20) NOT NULL,
+  `id_usuario` bigint(20) NOT NULL,
+  `classificacao` int(20) NOT NULL,
+  `comentario` varchar(255) DEFAULT NULL,
+  `data` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `feedback`
+--
+
+INSERT INTO `feedback` (`id`, `id_usuario`, `classificacao`, `comentario`, `data`) VALUES
+(3, 1, 5, 'Site bom', '07/10/12023'),
+(4, 1, 9, 'Site incrível', '2023'),
+(5, 1, 5, 'muito legal', '2023-40-42');
 
 -- --------------------------------------------------------
 
@@ -46,6 +114,31 @@ INSERT INTO `pessoa_fisica` (`id`, `nome`, `rg`, `cpf`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estrutura para tabela `pessoa_juridica`
+--
+
+CREATE TABLE `pessoa_juridica` (
+  `id` bigint(20) NOT NULL,
+  `razao_social` varchar(255) DEFAULT NULL,
+  `nome_fantasia` varchar(255) DEFAULT NULL,
+  `cnpj` varchar(255) DEFAULT NULL,
+  `ie` varchar(255) DEFAULT NULL,
+  `endereco` varchar(255) DEFAULT NULL,
+  `telefone` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `pessoa_juridica`
+--
+
+INSERT INTO `pessoa_juridica` (`id`, `razao_social`, `nome_fantasia`, `cnpj`, `ie`, `endereco`, `telefone`, `email`) VALUES
+(1, 'Banco SP', 'Sangue SP', '202322003', '123456789', 'Av Paulista', '11977490344', 'mauriciocalassara0@gmail.com'),
+(2, 'Hospital da Clinicas', 'Hospital das Clinicas', '121312313', '432455623', 'Rua das Clinicas', '1232131', 'rwerwerw@fewefw.com');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `scheduled_donations`
 --
 
@@ -62,7 +155,8 @@ CREATE TABLE `scheduled_donations` (
 
 INSERT INTO `scheduled_donations` (`id`, `id_doador`, `data`, `status`) VALUES
 (1, 1, '2023', 'INATIVO'),
-(2, 2, '23132', 'ativo');
+(2, 2, '23132', 'ativo'),
+(4, 1, '23131', 'ativo');
 
 -- --------------------------------------------------------
 
@@ -108,7 +202,8 @@ CREATE TABLE `transaction_donations` (
 
 INSERT INTO `transaction_donations` (`id`, `id_doador`, `id_hospital`, `qtd`, `data`, `teste`) VALUES
 (1, 1, 1, 434, '20/02/32321', 'negativo'),
-(2, 2, 2, 600, '30/02/2022', 'Positivo');
+(2, 2, 2, 600, '30/02/2022', 'Positivo'),
+(3, 1, 5, 200, '22323', 'aids');
 
 -- --------------------------------------------------------
 
@@ -131,16 +226,41 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`id`, `login`, `senha`, `status`, `tipo`) VALUES
 (1, 'Matheus', '1234', 'Ativo', 'adm'),
 (2, 'SCURACCHIO', 'ABFABF010101', 'ATIVO', 'VISITANTE'),
-(4, 'matheus', '123', 'ativo', 'adm')
+(4, 'matheus', '123', 'ativo', 'adm');
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
+-- Índices de tabela `campanha_doacao`
+--
+ALTER TABLE `campanha_doacao`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `estoque_sangue`
+--
+ALTER TABLE `estoque_sangue`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_banco` (`id_banco`);
+
+--
+-- Índices de tabela `feedback`
+--
+ALTER TABLE `feedback`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Índices de tabela `pessoa_fisica`
 --
 ALTER TABLE `pessoa_fisica`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `pessoa_juridica`
+--
+ALTER TABLE `pessoa_juridica`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -174,16 +294,40 @@ ALTER TABLE `usuarios`
 --
 
 --
+-- AUTO_INCREMENT de tabela `campanha_doacao`
+--
+ALTER TABLE `campanha_doacao`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de tabela `estoque_sangue`
+--
+ALTER TABLE `estoque_sangue`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de tabela `feedback`
+--
+ALTER TABLE `feedback`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT de tabela `pessoa_fisica`
 --
 ALTER TABLE `pessoa_fisica`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT de tabela `pessoa_juridica`
+--
+ALTER TABLE `pessoa_juridica`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT de tabela `scheduled_donations`
 --
 ALTER TABLE `scheduled_donations`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `sistemas`
@@ -195,7 +339,7 @@ ALTER TABLE `sistemas`
 -- AUTO_INCREMENT de tabela `transaction_donations`
 --
 ALTER TABLE `transaction_donations`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
@@ -206,6 +350,12 @@ ALTER TABLE `usuarios`
 --
 -- Restrições para tabelas despejadas
 --
+
+--
+-- Restrições para tabelas `estoque_sangue`
+--
+ALTER TABLE `estoque_sangue`
+  ADD CONSTRAINT `estoque_sangue_ibfk_1` FOREIGN KEY (`id_banco`) REFERENCES `pessoa_juridica` (`id`);
 
 --
 -- Restrições para tabelas `scheduled_donations`
