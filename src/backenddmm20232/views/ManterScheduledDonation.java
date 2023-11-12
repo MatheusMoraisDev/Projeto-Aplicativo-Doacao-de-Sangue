@@ -39,10 +39,10 @@ public class ManterScheduledDonation {
 
     private static void inserir() throws SQLException, ClassNotFoundException {
 
-        int id_doador = Integer.parseInt(JOptionPane.showInputDialog("ID Doador"));
+        int idDoador = Integer.parseInt(JOptionPane.showInputDialog("ID Doador"));
         String data = JOptionPane.showInputDialog("Data");
         String status = JOptionPane.showInputDialog("Status");
-        ScheduledDonation sdEnt = new ScheduledDonation(id_doador, data, status);
+        ScheduledDonation sdEnt = new ScheduledDonation(idDoador, data, status);
         ControllerScheduledDonation contSd = new ControllerScheduledDonation();
         ScheduledDonation sdSaida = contSd.inserir(sdEnt);
         JOptionPane.showMessageDialog(null,sdSaida.toString());
@@ -50,10 +50,10 @@ public class ManterScheduledDonation {
 
     private static void alterar() throws SQLException, ClassNotFoundException {
         int id = Integer.parseInt(JOptionPane.showInputDialog("ID"));
-        int id_doador = Integer.parseInt(JOptionPane.showInputDialog("ID Doador"));
+        int idDoador = Integer.parseInt(JOptionPane.showInputDialog("ID Doador"));
         String data = JOptionPane.showInputDialog("Data");
         String status = JOptionPane.showInputDialog("Status");
-        ScheduledDonation sdEnt = new ScheduledDonation(id, id_doador, data, status);
+        ScheduledDonation sdEnt = new ScheduledDonation(id, idDoador, data, status);
         ControllerScheduledDonation contSd = new ControllerScheduledDonation();
         ScheduledDonation sdSaida = contSd.alterar(sdEnt);
         JOptionPane.showMessageDialog(null,sdSaida.toString());

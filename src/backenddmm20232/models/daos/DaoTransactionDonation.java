@@ -69,8 +69,8 @@ public class DaoTransactionDonation {
         PreparedStatement stmt = c.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
 
         // seta os valores
-        stmt.setInt(1,tdEnt.getId_doador());
-        stmt.setInt(2,tdEnt.getId_hospital());
+        stmt.setInt(1,tdEnt.getIdDoador());
+        stmt.setInt(2,tdEnt.getIdHospital());
         stmt.setInt(3,tdEnt.getQtd());
         stmt.setString(4,tdEnt.getData());
         stmt.setString(5,tdEnt.getTeste());
@@ -91,8 +91,8 @@ public class DaoTransactionDonation {
         // prepared statement para inserção
         PreparedStatement stmt = c.prepareStatement(sql);
         // seta os valores
-        stmt.setInt(1,tdEnt.getId_doador());
-        stmt.setInt(2,tdEnt.getId_hospital());
+        stmt.setInt(1,tdEnt.getIdDoador());
+        stmt.setInt(2,tdEnt.getIdHospital());
         stmt.setInt(3,tdEnt.getQtd());
         stmt.setString(4,tdEnt.getData());
         stmt.setString(5,tdEnt.getTeste());

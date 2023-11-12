@@ -39,11 +39,11 @@ public class ManterEstoqueSangue {
 
     private static void inserir() throws SQLException, ClassNotFoundException {
 
-        int id_banco = Integer.parseInt(JOptionPane.showInputDialog("ID Banco"));
+        int idBanco = Integer.parseInt(JOptionPane.showInputDialog("ID Banco"));
         int qtd = Integer.parseInt(JOptionPane.showInputDialog("Quantidade Disponível"));
         String ts = JOptionPane.showInputDialog("Tipo Sanguineo");
         String dv = JOptionPane.showInputDialog("Data Validade");
-        EstoqueSangue EsEnt = new EstoqueSangue(id_banco ,qtd, ts, dv);
+        EstoqueSangue EsEnt = new EstoqueSangue(idBanco ,qtd, ts, dv);
         ControllerEstoqueSangue contEs = new ControllerEstoqueSangue();
         EstoqueSangue EsSaida = contEs.inserir(EsEnt);
         JOptionPane.showMessageDialog(null,EsSaida.toString());
@@ -51,11 +51,11 @@ public class ManterEstoqueSangue {
 
     private static void alterar() throws SQLException, ClassNotFoundException {
         int id = Integer.parseInt(JOptionPane.showInputDialog("ID"));
-        int id_banco = Integer.parseInt(JOptionPane.showInputDialog("ID Banco"));
+        int idBanco = Integer.parseInt(JOptionPane.showInputDialog("ID Banco"));
         int qtd = Integer.parseInt(JOptionPane.showInputDialog("Quantidade Disponível"));
         String ts = JOptionPane.showInputDialog("Tipo Sanguineo");
         String dv = JOptionPane.showInputDialog("Data Validade");
-        EstoqueSangue EsEnt = new EstoqueSangue(id, id_banco ,qtd, ts, dv);
+        EstoqueSangue EsEnt = new EstoqueSangue(id, idBanco ,qtd, ts, dv);
         ControllerEstoqueSangue contEs = new ControllerEstoqueSangue();
         EstoqueSangue EsSaida = contEs.alterar(EsEnt);
         JOptionPane.showMessageDialog(null,EsSaida.toString());

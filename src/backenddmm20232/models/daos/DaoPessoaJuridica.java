@@ -64,14 +64,14 @@ public class DaoPessoaJuridica {
    }
 
     public PessoaJuridica inserir(PessoaJuridica PjEnt) throws SQLException{
-        String sql = "insert into pessoa_juridica" + " (razao_social, nome_fantasia, cnpj, ie, endereco, telefone, email)" + " values (?,?,?)";
+        String sql = "insert into pessoa_juridica" + " (razao_social, nome_fantasia, cnpj, ie, endereco, telefone, email)" + " values (?,?,?,?,?,?,?)";
     
         // prepared statement para inserção
         PreparedStatement stmt = c.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
 
         // seta os valores
-        stmt.setString(1,PjEnt.getRazao_social());
-        stmt.setString(2,PjEnt.getNome_fantasia());
+        stmt.setString(1,PjEnt.getRazaoSocial());
+        stmt.setString(2,PjEnt.getNomeFantasia());
         stmt.setString(3,PjEnt.getCnpj());
         stmt.setString(4,PjEnt.getIe());
         stmt.setString(5,PjEnt.getEndereco());
@@ -94,8 +94,8 @@ public class DaoPessoaJuridica {
         // prepared statement para inserção
         PreparedStatement stmt = c.prepareStatement(sql);
         // seta os valores
-        stmt.setString(1,PjEnt.getRazao_social());
-        stmt.setString(2,PjEnt.getNome_fantasia());
+        stmt.setString(1,PjEnt.getRazaoSocial());
+        stmt.setString(2,PjEnt.getNomeFantasia());
         stmt.setString(3,PjEnt.getCnpj());
         stmt.setString(4,PjEnt.getIe());
         stmt.setString(5,PjEnt.getEndereco());
@@ -117,7 +117,7 @@ public class DaoPessoaJuridica {
         String sql = "select * from pessoa_juridica where data like ?";
         PreparedStatement stmt = this.c.prepareStatement(sql);
         // seta os valores
-        stmt.setString(1,"%" + PjEnt.getNome_fantasia() + "%");
+        stmt.setString(1,"%" + PjEnt.getNomeFantasia() + "%");
         
         ResultSet rs = stmt.executeQuery();
         

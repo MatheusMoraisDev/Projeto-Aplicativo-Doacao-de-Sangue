@@ -9,7 +9,7 @@ package backenddmm20232.models.beans;
  * @author Matheus Morais
  */
 public class ScheduledDonation {
-    private int id, id_doador;
+    private int id, idDoador;
     private String data, status;
 
     public ScheduledDonation(int id) {
@@ -20,15 +20,15 @@ public class ScheduledDonation {
         this.data = data;
     }
     
-    public ScheduledDonation(int id, int id_doador, String data, String status) {
+    public ScheduledDonation(int id, int idDoador, String data, String status) {
         this.id = id;
-        this.id_doador = id_doador;
+        this.idDoador = idDoador;
         this.data = data;
         this.status = status;
     }
 
-    public ScheduledDonation(int id_doador, String data, String status) {
-        this.id_doador = id_doador;
+    public ScheduledDonation(int idDoador, String data, String status) {
+        this.idDoador = idDoador;
         this.data = data;
         this.status = status;
     }
@@ -41,12 +41,12 @@ public class ScheduledDonation {
         this.id = id;
     }
 
-    public int getId_doador() {
-        return id_doador;
+    public int getIdDoador() {
+        return idDoador;
     }
 
-    public void setId_doador(int id_doador) {
-        this.id_doador = id_doador;
+    public void setIdDoador(int idDoador) {
+        this.idDoador = idDoador;
     }
 
     public String getData() {
@@ -67,7 +67,7 @@ public class ScheduledDonation {
 
     @Override
     public String toString() {
-        return "scheduled_donation{" + "id=" + id + ", id_doador=" + id_doador + ", data=" + data + ", status=" + status + '}';
+        return "scheduled_donation{" + "id=" + id + ", ID Doador=" + idDoador + ", data=" + data + ", status=" + status + '}';
     }
     
 }

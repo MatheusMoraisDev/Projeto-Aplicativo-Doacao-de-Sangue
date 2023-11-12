@@ -39,14 +39,14 @@ public class ManterPessoaJuridica {
 
     private static void inserir() throws SQLException, ClassNotFoundException {
 
-        String razao_social = JOptionPane.showInputDialog("Razão Social");
-        String nome_fantasia = JOptionPane.showInputDialog("Nome fantasia");
+        String razaoSocial = JOptionPane.showInputDialog("Razão Social");
+        String nomeFantasia = JOptionPane.showInputDialog("Nome fantasia");
         String cnpj = JOptionPane.showInputDialog("CNPJ");
         String ie = JOptionPane.showInputDialog("Inscrição estadual");
         String endereco = JOptionPane.showInputDialog("Endereço");
         String telefone = JOptionPane.showInputDialog("Telefone");
         String email = JOptionPane.showInputDialog("E-mail");
-        PessoaJuridica PjEnt = new PessoaJuridica(razao_social, nome_fantasia, cnpj, ie, endereco, telefone, email);
+        PessoaJuridica PjEnt = new PessoaJuridica(razaoSocial, nomeFantasia, cnpj, ie, endereco, telefone, email);
         ControllerPessoaJuridica contPj = new ControllerPessoaJuridica();
         PessoaJuridica PjSaida = contPj.inserir(PjEnt);
         JOptionPane.showMessageDialog(null,PjSaida.toString());
@@ -54,14 +54,14 @@ public class ManterPessoaJuridica {
 
     private static void alterar() throws SQLException, ClassNotFoundException {
         int id = Integer.parseInt(JOptionPane.showInputDialog("ID"));
-        String razao_social = JOptionPane.showInputDialog("Razão Social");
-        String nome_fantasia = JOptionPane.showInputDialog("Nome fantasia");
+        String razaoSocial = JOptionPane.showInputDialog("Razão Social");
+        String nomeFantasia = JOptionPane.showInputDialog("Nome fantasia");
         String cnpj = JOptionPane.showInputDialog("CNPJ");
         String ie = JOptionPane.showInputDialog("Inscrição estadual");
         String endereco = JOptionPane.showInputDialog("Endereço");
         String telefone = JOptionPane.showInputDialog("Telefone");
         String email = JOptionPane.showInputDialog("E-mail");
-        PessoaJuridica PjEnt = new PessoaJuridica(id, razao_social, nome_fantasia, cnpj, ie, endereco, telefone, email);
+        PessoaJuridica PjEnt = new PessoaJuridica(id, razaoSocial, nomeFantasia, cnpj, ie, endereco, telefone, email);
         ControllerPessoaJuridica contPj = new ControllerPessoaJuridica();
         PessoaJuridica PjSaida = contPj.alterar(PjEnt);
         JOptionPane.showMessageDialog(null,PjSaida.toString());
@@ -84,8 +84,8 @@ public class ManterPessoaJuridica {
     }
 
     private static void listar() throws SQLException, ClassNotFoundException {
-        String nome_fantasia = JOptionPane.showInputDialog("Nome Fantasia");
-        PessoaJuridica PjEnt = new PessoaJuridica(nome_fantasia);
+        String nomeFantasia = JOptionPane.showInputDialog("Nome Fantasia");
+        PessoaJuridica PjEnt = new PessoaJuridica(nomeFantasia);
         ControllerPessoaJuridica contPj = new ControllerPessoaJuridica();
         List<PessoaJuridica> ListaEstoque = contPj.listar(PjEnt);
         for (PessoaJuridica PjSaida : ListaEstoque) {

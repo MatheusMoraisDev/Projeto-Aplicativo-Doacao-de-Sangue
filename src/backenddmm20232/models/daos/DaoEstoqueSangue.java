@@ -27,7 +27,7 @@ public class DaoEstoqueSangue {
     }
 
     public EstoqueSangue excluir(EstoqueSangue EsEnt) throws SQLException{
-        String sql = "delete from estoque_sangue WHERE id = ?";
+        String sql = "delete from WHERE id = ?";
         // prepared statement para inserção
         PreparedStatement stmt = c.prepareStatement(sql);
         // seta os valores
@@ -61,16 +61,16 @@ public class DaoEstoqueSangue {
    }
 
     public EstoqueSangue inserir(EstoqueSangue EsEnt) throws SQLException{
-        String sql = "insert into estoque_sangue" + " (id_banco, tipo_sanguineo, quantidade_disponivel, data_validade)" + " values (?,?,?)";
+        String sql = "insert into estoque_sangue" + " (id_banco, tipo_sanguineo, quantidade_disponivel, data_validade)" + " values (?,?,?,?)";
     
         // prepared statement para inserção
         PreparedStatement stmt = c.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
 
         // seta os valores
-        stmt.setInt(1,EsEnt.getId_banco());
+        stmt.setInt(1,EsEnt.getIdBanco());
         stmt.setString(2,EsEnt.getTs());
         stmt.setInt(3,EsEnt.getQtd());
-         stmt.setString(3,EsEnt.getDv());
+        stmt.setString(4,EsEnt.getDv());
 
         // executa
         stmt.executeUpdate();
@@ -88,7 +88,7 @@ public class DaoEstoqueSangue {
         // prepared statement para inserção
         PreparedStatement stmt = c.prepareStatement(sql);
         // seta os valores
-        stmt.setInt(1,EsEnt.getId_banco());
+        stmt.setInt(1,EsEnt.getIdBanco());
         stmt.setString(2,EsEnt.getTs());
         stmt.setInt(3,EsEnt.getQtd());
         stmt.setString(4,EsEnt.getDv());
@@ -105,7 +105,7 @@ public class DaoEstoqueSangue {
 
         List<EstoqueSangue> estoque_sangue = new ArrayList<>();
         
-        String sql = "select * from estoque_sangue where data like ?";
+        String sql = "select * from estoque_sangue where tipo_sanguineo like ?";
         PreparedStatement stmt = this.c.prepareStatement(sql);
         // seta os valores
         stmt.setString(1,"%" + EsEnt.getTs() + "%");

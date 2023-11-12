@@ -67,7 +67,7 @@ public class DaoScheduledDonation {
         PreparedStatement stmt = c.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
 
         // seta os valores
-        stmt.setInt(1,sdEnt.getId_doador());
+        stmt.setInt(1,sdEnt.getIdDoador());
         stmt.setString(2,sdEnt.getData());
         stmt.setString(3,sdEnt.getStatus());
 
@@ -87,7 +87,7 @@ public class DaoScheduledDonation {
         // prepared statement para inserção
         PreparedStatement stmt = c.prepareStatement(sql);
         // seta os valores
-        stmt.setInt(1,sdEnt.getId_doador());
+        stmt.setInt(1,sdEnt.getIdDoador());
         stmt.setString(2,sdEnt.getData());
         stmt.setString(3,sdEnt.getStatus());
         stmt.setInt(4,sdEnt.getId());

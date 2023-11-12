@@ -38,12 +38,12 @@ public class ManterTransactionDonation {
     }
 
     private static void inserir() throws SQLException, ClassNotFoundException {
-        int id_doador = Integer.parseInt(JOptionPane.showInputDialog("ID Doador"));
-        int id_hospital = Integer.parseInt(JOptionPane.showInputDialog("ID Hospital"));
+        int idDoador = Integer.parseInt(JOptionPane.showInputDialog("ID Doador"));
+        int idHospital = Integer.parseInt(JOptionPane.showInputDialog("ID Hospital"));
         int qtd = Integer.parseInt(JOptionPane.showInputDialog("Quantidade Doada"));
         String data = JOptionPane.showInputDialog("Data");
         String teste = JOptionPane.showInputDialog("Teste");
-        TransactionDonation tdEnt = new TransactionDonation(id_doador, id_hospital, qtd, data, teste);
+        TransactionDonation tdEnt = new TransactionDonation(idDoador, idHospital, qtd, data, teste);
         ControllerTransactionDonation contTd = new ControllerTransactionDonation();
         TransactionDonation tdSaida = contTd.inserir(tdEnt);
         JOptionPane.showMessageDialog(null,tdSaida.toString());
@@ -51,12 +51,12 @@ public class ManterTransactionDonation {
 
     private static void alterar() throws SQLException, ClassNotFoundException {
         int id = Integer.parseInt(JOptionPane.showInputDialog("ID"));
-        int id_doador = Integer.parseInt(JOptionPane.showInputDialog("ID Doador"));
-        int id_hospital = Integer.parseInt(JOptionPane.showInputDialog("ID Hospital"));
+        int idDoador = Integer.parseInt(JOptionPane.showInputDialog("ID Doador"));
+        int idHospital = Integer.parseInt(JOptionPane.showInputDialog("ID Hospital"));
         int qtd = Integer.parseInt(JOptionPane.showInputDialog("Quantidade Doada"));
         String data = JOptionPane.showInputDialog("Data");
         String teste = JOptionPane.showInputDialog("Teste");
-        TransactionDonation tdEnt = new TransactionDonation(id, id_doador, id_hospital, qtd, data, teste);
+        TransactionDonation tdEnt = new TransactionDonation(id, idDoador, idHospital, qtd, data, teste);
         ControllerTransactionDonation contTd = new ControllerTransactionDonation();
         TransactionDonation tdSaida = contTd.alterar(tdEnt);
         JOptionPane.showMessageDialog(null,tdSaida.toString());

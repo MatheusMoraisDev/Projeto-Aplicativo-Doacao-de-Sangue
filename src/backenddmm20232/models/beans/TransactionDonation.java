@@ -9,7 +9,7 @@ package backenddmm20232.models.beans;
  * @author Matheus Morais
  */
 public class TransactionDonation {
-    private int id, id_doador, id_hospital, qtd;
+    private int id, idDoador, idHospital, qtd;
     private String data, teste;
 
     public int getId() {
@@ -20,20 +20,20 @@ public class TransactionDonation {
         this.id = id;
     }
 
-    public int getId_doador() {
-        return id_doador;
+    public int getIdDoador() {
+        return idDoador;
     }
 
-    public void setId_doador(int id_doador) {
-        this.id_doador = id_doador;
+    public void setIdDoador(int idDoador) {
+        this.idDoador = idDoador;
     }
 
-    public int getId_hospital() {
-        return id_hospital;
+    public int getIdHospital() {
+        return idHospital;
     }
 
-    public void setId_hospital(int id_hospital) {
-        this.id_hospital = id_hospital;
+    public void setIdHospital(int idHospital) {
+        this.idHospital = idHospital;
     }
 
     public int getQtd() {
@@ -64,9 +64,9 @@ public class TransactionDonation {
         this.id = id;
     }
 
-    public TransactionDonation(int id_doador, int id_hospital, int qtd, String data, String teste) {
-        this.id_doador = id_doador;
-        this.id_hospital = id_hospital;
+    public TransactionDonation(int idDoador, int idHospital, int qtd, String data, String teste) {
+        this.idDoador = idDoador;
+        this.idHospital = idHospital;
         this.qtd = qtd;
         this.data = data;
         this.teste = teste;
@@ -76,10 +76,10 @@ public class TransactionDonation {
         this.data = data;
     }
 
-    public TransactionDonation(int id, int id_doador, int id_hospital, int qtd, String data, String teste) {
+    public TransactionDonation(int id, int idDoador, int idHospital, int qtd, String data, String teste) {
         this.id = id;
-        this.id_doador = id_doador;
-        this.id_hospital = id_hospital;
+        this.idDoador = idDoador;
+        this.idHospital = idHospital;
         this.qtd = qtd;
         this.data = data;
         this.teste = teste;
@@ -87,7 +87,7 @@ public class TransactionDonation {
 
     @Override
     public String toString() {
-        return "TransactionDonation{" + "id=" + id + ", id_doador=" + id_doador + ", id_hospital=" + id_hospital + ", qtd=" + qtd + ", data=" + data + ", teste=" + teste + '}';
+        return "TransactionDonation{" + "id=" + id + ", ID Doador=" + idDoador + ", ID Hospital=" + idHospital + ", qtd=" + qtd + ", data=" + data + ", teste=" + teste + '}';
     }
     
     

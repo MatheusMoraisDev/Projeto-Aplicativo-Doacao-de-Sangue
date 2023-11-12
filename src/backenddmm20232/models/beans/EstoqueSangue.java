@@ -9,7 +9,7 @@ package backenddmm20232.models.beans;
  * @author Mauricio Calassara
  */
 public class EstoqueSangue {
-    private int id, id_banco, qtd;
+    private int id, idBanco, qtd;
     private String ts, dv;
 
     public int getId() {
@@ -20,12 +20,12 @@ public class EstoqueSangue {
         this.id = id;
     }
 
-    public int getId_banco() {
-        return id_banco;
+    public int getIdBanco() {
+        return idBanco;
     }
 
-    public void setId_banco(int id_banco) {
-        this.id_banco = id_banco;
+    public void setIdBanco(int idBanco) {
+        this.idBanco = idBanco;
     }
 
     public int getQtd() {
@@ -56,16 +56,16 @@ public class EstoqueSangue {
         this.id = id;
     }
 
-    public EstoqueSangue(int id, int id_banco, int qtd, String ts, String dv) {
+    public EstoqueSangue(int id, int idBanco, int qtd, String ts, String dv) {
         this.id = id;
-        this.id_banco = id_banco;
+        this.idBanco = idBanco;
         this.qtd = qtd;
         this.ts = ts;
         this.dv = dv;
     }
 
-    public EstoqueSangue(int id_banco, int qtd, String ts, String dv) {
-        this.id_banco = id_banco;
+    public EstoqueSangue(int idBanco, int qtd, String ts, String dv) {
+        this.idBanco = idBanco;
         this.qtd = qtd;
         this.ts = ts;
         this.dv = dv;
@@ -77,7 +77,7 @@ public class EstoqueSangue {
 
     @Override
     public String toString() {
-        return "EstoqueSangue{" + "ID=" + id + ", ID Banco=" + id_banco + ", Quantidade disponível=" + qtd + ", Tipo sanguineo=" + ts + ", Data de validade=" + dv + '}';
+        return "EstoqueSangue{" + "ID=" + id + ", ID Banco=" + idBanco + ", Quantidade disponível=" + qtd + ", Tipo sanguineo=" + ts + ", Data de validade=" + dv + '}';
     }
     
 }

@@ -10,7 +10,7 @@ package backenddmm20232.models.beans;
  */
 public class PessoaJuridica {
     private int id;
-    private String razao_social, nome_fantasia, cnpj, ie, endereco, telefone, email;
+    private String razaoSocial, nomeFantasia, cnpj, ie, endereco, telefone, email;
 
     public int getId() {
         return id;
@@ -20,20 +20,20 @@ public class PessoaJuridica {
         this.id = id;
     }
 
-    public String getRazao_social() {
-        return razao_social;
+    public String getRazaoSocial() {
+        return razaoSocial;
     }
 
-    public void setRazao_social(String razao_social) {
-        this.razao_social = razao_social;
+    public void setRazaoSocial(String razaoSocial) {
+        this.razaoSocial = razaoSocial;
     }
 
-    public String getNome_fantasia() {
-        return nome_fantasia;
+    public String getNomeFantasia() {
+        return nomeFantasia;
     }
 
-    public void setNome_fantasia(String nome_fantasia) {
-        this.nome_fantasia = nome_fantasia;
+    public void setNomeFantasia(String nomeFantasia) {
+        this.nomeFantasia = nomeFantasia;
     }
 
     public String getCnpj() {
@@ -76,10 +76,10 @@ public class PessoaJuridica {
         this.email = email;
     }
 
-    public PessoaJuridica(int id, String razao_social, String nome_fantasia, String cnpj, String ie, String endereco, String telefone, String email) {
+    public PessoaJuridica(int id, String razaoSocial, String nomeFantasia, String cnpj, String ie, String endereco, String telefone, String email) {
         this.id = id;
-        this.razao_social = razao_social;
-        this.nome_fantasia = nome_fantasia;
+        this.razaoSocial = razaoSocial;
+        this.nomeFantasia = nomeFantasia;
         this.cnpj = cnpj;
         this.ie = ie;
         this.endereco = endereco;
@@ -87,9 +87,9 @@ public class PessoaJuridica {
         this.email = email;
     }
 
-    public PessoaJuridica(String razao_social, String nome_fantasia, String cnpj, String ie, String endereco, String telefone, String email) {
-        this.razao_social = razao_social;
-        this.nome_fantasia = nome_fantasia;
+    public PessoaJuridica(String razaoSocial, String nomeFantasia, String cnpj, String ie, String endereco, String telefone, String email) {
+        this.razaoSocial = razaoSocial;
+        this.nomeFantasia = nomeFantasia;
         this.cnpj = cnpj;
         this.ie = ie;
         this.endereco = endereco;
@@ -97,8 +97,8 @@ public class PessoaJuridica {
         this.email = email;
     }
 
-    public PessoaJuridica(String nome_fantasia) {
-        this.nome_fantasia = nome_fantasia;
+    public PessoaJuridica(String nomeFantasia) {
+        this.nomeFantasia = nomeFantasia;
     }
     
 
@@ -108,7 +108,7 @@ public class PessoaJuridica {
 
     @Override
     public String toString() {
-        return "PessoaJuridica{" + "Id=" + id + ", Razão social=" + razao_social + ", Nome fantasia=" + nome_fantasia + ", CNPJ=" + cnpj + ", Inscrição Estadual=" + ie + ", Endereço=" + endereco + ", Telefone=" + telefone + ", E-mail=" + email + '}';
+        return "PessoaJuridica{" + "Id=" + id + ", Razão social=" + razaoSocial + ", Nome fantasia=" + nomeFantasia + ", CNPJ=" + cnpj + ", Inscrição Estadual=" + ie + ", Endereço=" + endereco + ", Telefone=" + telefone + ", E-mail=" + email + '}';
     }
     
     
