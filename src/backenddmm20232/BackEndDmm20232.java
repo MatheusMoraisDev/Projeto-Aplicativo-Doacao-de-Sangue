@@ -27,11 +27,15 @@ public class BackEndDmm20232 {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
+        
         if(ManterUsuario.validar()) {
-            menu();
+            while(true){
+                menu();
+            }
         } else {
             JOptionPane.showMessageDialog(null,"Usuario Inválido");            
         }
+      
     }
 
     public static void menu() throws SQLException, ClassNotFoundException {

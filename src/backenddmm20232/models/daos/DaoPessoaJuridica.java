@@ -90,7 +90,7 @@ public class DaoPessoaJuridica {
     }
 
     public PessoaJuridica alterar(PessoaJuridica PjEnt) throws SQLException{
-        String sql = "UPDATE pessoa_juridica SET razao_social = ?, nome_fantasia = ?, cnpj = ?, ie =, endereco =, telefone =, email = ? WHERE id = ?";
+        String sql = "UPDATE pessoa_juridica SET razao_social = ?, nome_fantasia = ?, cnpj = ?, ie = ?, endereco = ?, telefone =  ?, email = ? WHERE id = ?";
         // prepared statement para inserção
         PreparedStatement stmt = c.prepareStatement(sql);
         // seta os valores
@@ -114,7 +114,7 @@ public class DaoPessoaJuridica {
 
         List<PessoaJuridica> pessoa_juridica = new ArrayList<>();
         
-        String sql = "select * from pessoa_juridica where data like ?";
+        String sql = "select * from pessoa_juridica where nome_fantasia like ?";
         PreparedStatement stmt = this.c.prepareStatement(sql);
         // seta os valores
         stmt.setString(1,"%" + PjEnt.getNomeFantasia() + "%");
@@ -124,13 +124,14 @@ public class DaoPessoaJuridica {
         while (rs.next()) {      
             // criando o objeto PessoaJuridica
             PessoaJuridica PessoaJuridica = new PessoaJuridica(
-                rs.getString(1),
+                rs.getInt(1),
                 rs.getString(2),
                 rs.getString(3),
                 rs.getString(4),
                 rs.getString(5),
                 rs.getString(6),
-                rs.getString(7)
+                rs.getString(7),
+                rs.getString(8)
             );
             // adiciona o PessoaJuridica à lista de pessoa_juridica
             pessoa_juridica.add(PessoaJuridica);

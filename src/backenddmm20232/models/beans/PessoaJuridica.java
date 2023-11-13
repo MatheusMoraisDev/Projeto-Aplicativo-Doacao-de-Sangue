@@ -108,7 +108,7 @@ public class PessoaJuridica {
 
     @Override
     public String toString() {
-        return "PessoaJuridica{" + "Id=" + id + ", Razão social=" + razaoSocial + ", Nome fantasia=" + nomeFantasia + ", CNPJ=" + cnpj + ", Inscrição Estadual=" + ie + ", Endereço=" + endereco + ", Telefone=" + telefone + ", E-mail=" + email + '}';
+        return "PessoaJuridica{" + "ID=" + id + ", Razão social=" + razaoSocial + ", Nome fantasia=" + nomeFantasia + ", CNPJ=" + cnpj + ", Inscrição Estadual=" + ie + ", Endereço=" + endereco + ", Telefone=" + telefone + ", E-mail=" + email + '}';
     }
     
     

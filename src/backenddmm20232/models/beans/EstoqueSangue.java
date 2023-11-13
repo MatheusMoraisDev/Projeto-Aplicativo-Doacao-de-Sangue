@@ -77,7 +77,7 @@ public class EstoqueSangue {
 
     @Override
     public String toString() {
-        return "EstoqueSangue{" + "ID=" + id + ", ID Banco=" + idBanco + ", Quantidade disponível=" + qtd + ", Tipo sanguineo=" + ts + ", Data de validade=" + dv + '}';
+        return "EstoqueSangue{" + "ID=" + id + ", ID Banco=" + idBanco + ", Quantidade Disponível=" + qtd + ", Tipo Sanguineo=" + ts + ", Data de Validade=" + dv + '}';
     }
-    
+
 }

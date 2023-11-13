@@ -27,7 +27,7 @@ public class DaoEstoqueSangue {
     }
 
     public EstoqueSangue excluir(EstoqueSangue EsEnt) throws SQLException{
-        String sql = "delete from WHERE id = ?";
+        String sql = "delete from estoque_sangue WHERE id = ?";
         // prepared statement para inserção
         PreparedStatement stmt = c.prepareStatement(sql);
         // seta os valores
@@ -117,8 +117,9 @@ public class DaoEstoqueSangue {
             EstoqueSangue EstoqueSangue = new EstoqueSangue(
                 rs.getInt(1),
                 rs.getInt(2),
-                rs.getString(3),
-                rs.getString(4)
+                rs.getInt(3),
+                rs.getString(4),
+                rs.getString(5)
             );
             // adiciona o EstoqueSangue à lista de estoque_sangue
             estoque_sangue.add(EstoqueSangue);
