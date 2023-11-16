@@ -13,6 +13,7 @@ import backenddmm20232.views.ManterUsuario;
 import backenddmm20232.views.ManterEstoqueSangue;
 import backenddmm20232.views.ManterFeedback;
 import backenddmm20232.views.ManterPessoaJuridica;
+import backenddmm20232.views.ManterUsuariosSistemas;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
  
@@ -49,7 +50,8 @@ public class BackEndDmm20232 {
               " 7 - Pessoa Jurídica \n" +
               " 8 - Campanhas de Doação \n" +
               " 9 - Feedbacks \n" +
-              " 10 - ControleAcesso";
+              " 10 - Usuários Sistemas \n" +  
+              " 11 - ControleAcesso";
         
         int num = Integer.parseInt(JOptionPane.showInputDialog(msg));
         
@@ -86,6 +88,8 @@ public class BackEndDmm20232 {
                 ManterFeedback.menu();
                 break;
             case 10:
+                ManterUsuariosSistemas.menu();
+            case 11:
                 break;
             default:
                 System.out.println("Opção inválido");
