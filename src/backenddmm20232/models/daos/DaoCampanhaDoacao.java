@@ -86,7 +86,7 @@ public class DaoCampanhaDoacao {
     }
 
     public CampanhaDoacao alterar(CampanhaDoacao CdEnt) throws SQLException {
-        String sql = "UPDATE campanha_doacao SET nome_campanha = ?, descricao = ?, data_inicio = ?, data_fim = ? WHERE id = ?";
+        String sql = "UPDATE campanha_doacao SET id_hospital = ?, nome_campanha = ?, descricao = ?, data_inicio = ?, data_fim = ? WHERE id = ?";
         // prepared statement para inserção
         PreparedStatement stmt = c.prepareStatement(sql);
         // seta os valores
