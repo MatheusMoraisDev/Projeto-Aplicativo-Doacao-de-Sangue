@@ -4,9 +4,6 @@
  */
 package backenddmm20232.models.beans;
 
-import backenddmm20232.models.beans.Sistema;
-import backenddmm20232.models.beans.Usuario;
-
 /**
  *
  * @author Professor

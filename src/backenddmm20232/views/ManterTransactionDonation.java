@@ -85,6 +85,8 @@ public class ManterTransactionDonation {
         List<TransactionDonation> ListaTransactions = contTd.listar(tdEnt);
         for (TransactionDonation tdSaida : ListaTransactions) {
             JOptionPane.showMessageDialog(null,tdSaida.toString());
+            JOptionPane.showMessageDialog(null,tdSaida.getPf().toString());
+            JOptionPane.showMessageDialog(null,tdSaida.getPj().toString());
         }
     }
 

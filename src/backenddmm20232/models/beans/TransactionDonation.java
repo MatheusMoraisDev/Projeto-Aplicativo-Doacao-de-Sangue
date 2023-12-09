@@ -11,6 +11,8 @@ package backenddmm20232.models.beans;
 public class TransactionDonation {
     private int id, idDoador, idHospital, qtd;
     private String data, teste;
+    private PessoaFisica pf;
+    private PessoaJuridica pj;
 
     public int getId() {
         return id;
@@ -18,22 +20,6 @@ public class TransactionDonation {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public int getIdDoador() {
-        return idDoador;
-    }
-
-    public void setIdDoador(int idDoador) {
-        this.idDoador = idDoador;
-    }
-
-    public int getIdHospital() {
-        return idHospital;
-    }
-
-    public void setIdHospital(int idHospital) {
-        this.idHospital = idHospital;
     }
 
     public int getQtd() {
@@ -58,6 +44,38 @@ public class TransactionDonation {
 
     public void setTeste(String teste) {
         this.teste = teste;
+    }
+
+    public int getIdDoador() {
+        return idDoador;
+    }
+
+    public void setIdDoador(int idDoador) {
+        this.idDoador = idDoador;
+    }
+
+    public int getIdHospital() {
+        return idHospital;
+    }
+
+    public void setIdHospital(int idHospital) {
+        this.idHospital = idHospital;
+    }
+    
+    public PessoaFisica getPf(){
+        return pf;
+    }
+    
+    public void setPf(PessoaFisica pf){
+        this.pf = pf;
+    }
+    
+    public PessoaJuridica getPj(){
+       return pj;
+    }
+    
+    public void setPj(PessoaJuridica pj){
+        this.pj = pj;
     }
 
     public TransactionDonation(int id) {

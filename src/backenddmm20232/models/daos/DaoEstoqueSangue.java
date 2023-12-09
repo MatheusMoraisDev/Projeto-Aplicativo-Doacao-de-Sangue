@@ -52,8 +52,9 @@ public class DaoEstoqueSangue {
                 EsSaida = new EstoqueSangue(
                     rs.getInt(1),
                     rs.getInt(2),
-                    rs.getString(3),
-                    rs.getString(4));
+                    rs.getInt(3),
+                    rs.getString(4),
+                    rs.getString(5));
             // adiciona o usu à lista de EstoqueSangue
             }
             stmt.close();
